@@ -6,7 +6,9 @@ import classes from "./HeaderCartButton.module.css";
 const HeaderCartButton = (props) => {
 
   const cartCtx = useContext(CartContext);
-  const numberItems = cartCtx.items.reduce((c1,item)=>{return c1+item.amount},0);
+  const numberItems = cartCtx.items.reduce((curNumber, item) => {
+    return curNumber + item.amount;
+  }, 0);
 
 
   return (
